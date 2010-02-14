@@ -18,9 +18,17 @@ module Howdy
       DictionaryCom
     end
 
+    def self.available
+      @@available_dictionaries ||= []
+    end
+
     class Base
 
       attr_reader :user_query
+
+      def self.inherited(base)
+        Howdy::Dictionary.available << base
+      end
 
       def initialize(user_query)
         @user_query = user_query
@@ -32,6 +40,22 @@ module Howdy
 
       def self.dict_url
         @url
+      end
+
+      def self.name(human_name)
+        @name = human_name
+      end
+
+      def self.description(dictionary_description)
+        @description = dictionary_description
+      end
+
+      def self.dict_name
+        @name ||= self.name.underscore
+      end
+
+      def self.dict_description
+        @description ||= ""
       end
 
       def self.encoding(enc)

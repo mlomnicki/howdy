@@ -5,6 +5,8 @@ module Howdy
     class DictPl < Base
 
       url 'http://www.dict.pl/dict?word=#{user_query}'
+      name 'dict.pl'
+      description 'Polish-English dictionary'
 
       def parse
         document.css('table.resTable tr.resRow').each do |row|

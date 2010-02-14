@@ -19,6 +19,13 @@ opts = OptionParser.new do |opts|
     Howdy::Dictionary.set(dict)
   end
 
+  opts.on("-l", "--list", "List available dictionaries") do |l|
+    Howdy::Dictionary.available.each do |dict|
+      puts "  #{dict.dict_name} - #{dict.dict_description}"
+    end
+    exit
+  end
+
   opts.on_tail("-h", "--help", "Show this message") do |h|
     puts opts
     exit
