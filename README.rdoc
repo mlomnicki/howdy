@@ -1,6 +1,32 @@
 = Howdy
 
-Description goes here.
+Dead easy command line dictionary.
+
+= Installation
+
+    gem sources -a http://gemcutter.org
+    gem install howdy
+
+= Description
+
+Hodwy is a tool that allowsi you querying web dictionaries from a command line.
+Howdy enables "how" binary in your system. If for example you want to know what does 'awesome' mean than just issue:
+
+    $ how awesome
+            
+    1.inspiring awe: an awesome sight. 
+    2.showing or characterized by awe.
+    3.Slang. very impressive: That new white convertible is totally awesome. 
+
+    $ how -c dict.pl awesome
+    
+    fantastyczny; zachwycający; niesamowity
+
+= Available Dictionaries
+
+ * http://dictionary.com
+ * http://dict.pl
+ * http://ling.pl
 
 == Note on Patches/Pull Requests
  
@@ -15,4 +41,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 mlomnicki. See LICENSE for details.
+Copyright (c) 2010 Michał Łomnicki. See LICENSE for details.
