@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{howdy}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mlomnicki"]
   s.date = %q{2010-02-14}
   s.default_executable = %q{how}
-  s.description = %q{Hodwy is a tool that allowsi you querying web dictionaries from a command line.}
+  s.description = %q{Howdy is a tool that allows querying web dictionaries from a command line.}
   s.email = %q{michal.lomnicki@gmail.com}
   s.executables = ["how"]
   s.extra_rdoc_files = [
