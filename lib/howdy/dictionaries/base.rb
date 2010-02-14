@@ -7,7 +7,15 @@ module Howdy
   module Dictionary
       
     def self.current
-      LingPl
+      @@dictionary ||= default_dictionary
+    end
+
+    def self.set(dictionary)
+      @@dictionary = dictionary
+    end
+
+    def self.default_dictionary
+      DictPl
     end
 
     class Base

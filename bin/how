@@ -1,11 +1,36 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'optparse'
 require '../lib/howdy'
 
-query = ARGV.first
+opts = OptionParser.new do |opts|
 
-dict = Howdy::Dictionary.current.new(query)
+  opts.banner = "Usage: #{$0} [options]"
+
+  opts.on("-c", "--choose DICTIONARY", "Interactively choose dictionary or pass one of: dict.pl, ling.pl") do |c|
+    dict = case c
+      when 'dict.pl': Howdy::Dictionary::DictPl
+      when 'ling.pl': Howdy::Dictionary::LingPl
+      else raise Howdy::HowdyError, 'Choose one of available dictionaries'
+    end
+    Howdy::Dictionary.set(dict)
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do |h|
+    puts opts
+    exit
+  end
+
+end
+opts.parse!
+
+if ARGV.empty?
+  puts opts
+  exit
+end
+
+dict = Howdy::Dictionary.current.new(ARGV.join(' '))
 dict.parse
 dict.print
 
