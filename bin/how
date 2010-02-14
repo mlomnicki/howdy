@@ -13,6 +13,7 @@ opts = OptionParser.new do |opts|
       when 'dict.pl': Howdy::Dictionary::DictPl
       when 'ling.pl': Howdy::Dictionary::LingPl
       when 'dictionary.com': Howdy::Dictionary::DictionaryCom
+      when 'urbandictionary.com': Howdy::Dictionary::UrbanDictionaryCom
       else raise Howdy::HowdyError, 'Choose one of available dictionaries'
     end
     Howdy::Dictionary.set(dict)
