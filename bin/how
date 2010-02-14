@@ -21,7 +21,7 @@ opts = OptionParser.new do |opts|
 
   opts.on("-l", "--list", "List available dictionaries") do |l|
     Howdy::Dictionary.available.each do |dict|
-      puts "  #{dict.dict_name} - #{dict.dict_description}"
+      puts "  #{dict.dict_label} - #{dict.dict_description}"
     end
     exit
   end

@@ -3,7 +3,7 @@ module Howdy
 		class UrbanDictionaryCom < Base
 
 			url 'http://www.urbandictionary.com/define.php?term=#{user_query}'
-      name 'urbandictionary.com'
+      label 'urbandictionary.com'
       description 'Slang dictionary'
 
 			def parse

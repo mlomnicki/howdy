@@ -1,5 +1,8 @@
 # Stolen from Steam project by Sven Fuchs http://github.com/svenfuchs/steam
+
 class String
+
+  # Returns underscored string
   def underscore
     self[0, 1].downcase + self[1..-1].gsub(/[A-Z]/) { |c| "_#{c.downcase}" }
   end

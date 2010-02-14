@@ -5,7 +5,7 @@ module Howdy
     class DictionaryCom < Base
 
       url 'http://dictionary.reference.com/browse/#{user_query}'
-      name 'dictionary.com'
+      label 'dictionary.com'
       description 'English dictionary'
 
       def parse

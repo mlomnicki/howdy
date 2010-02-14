@@ -5,7 +5,7 @@ module Howdy
     class LingPl < Base
 
       url 'http://www2.ling.pl/lingfeed-ps.php?word=#{user_query}&sType=0&chooseLang=1'
-      name 'ling.pl'
+      label 'ling.pl'
       description 'Polish-English dictionary'
 
       def parse
