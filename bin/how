@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'optparse'
-require '../lib/howdy'
+require File.join(File.dirname(__FILE__), '..', 'lib', 'howdy')
 
 opts = OptionParser.new do |opts|
 
