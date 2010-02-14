@@ -29,6 +29,10 @@ Howdy enables "how" binary in your system. If for example you want to know what 
  * http://dict.pl
  * http://ling.pl
 
+= Documentation
+
+http://howdy.lomnicki.com.pl
+
 = Contributors:
  * Paweł Pacana http://github.com/pawelpacana
 
