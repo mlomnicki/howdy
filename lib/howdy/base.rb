@@ -7,14 +7,14 @@ module Howdy
   module Dictionary
       
     def self.current
-      @@dictionary ||= default_dictionary
+      @@dictionary ||= default
     end
 
     def self.set(dictionary)
       @@dictionary = dictionary
     end
 
-    def self.default_dictionary
+    def self.default
       DictionaryCom
     end
 
