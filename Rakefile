@@ -45,5 +45,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "howdy #{version}"
   rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('lib/*/*.rb', 'lib/core/**/*.rb')
+  rdoc.options << "-c UTF-8"
 end
