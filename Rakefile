@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "howdy"
     gem.summary = %Q{Query web dictionaries from command line}
-    gem.description = %Q{Hodwy is a tool that allowsi you querying web dictionaries from a command line.}
+    gem.description = %Q{Hodwy is a tool that allows querying web dictionaries from a command line.}
     gem.email = "michal.lomnicki@gmail.com"
     gem.homepage = "http://github.com/mlomnicki/howdy"
     gem.authors = ["mlomnicki"]

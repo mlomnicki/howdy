@@ -9,7 +9,7 @@ Dead easy command line dictionary.
 
 = Description
 
-Hodwy is a tool that allowsi you querying web dictionaries from a command line.
+Hodwy is a tool that allows querying web dictionaries from a command line.
 Howdy enables "how" binary in your system. If for example you want to know what does 'awesome' mean than just issue:
 
     $ how awesome
