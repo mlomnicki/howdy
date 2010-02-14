@@ -15,7 +15,7 @@ module Howdy
     end
 
     def self.default_dictionary
-      DictPl
+      DictionaryCom
     end
 
     class Base
