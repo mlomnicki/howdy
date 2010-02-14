@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require '../lib/howdy'
+
+query = ARGV.first
+
+dict = Howdy::Dictionary.current.new(query)
+dict.parse
+dict.print
+

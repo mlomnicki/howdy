@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "rdict"
+    gem.name = "howdy"
     gem.summary = %Q{Query web dictionaries from command line}
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "michal.lomnicki@gmail.com"
-    gem.homepage = "http://github.com/mlomnicki/rdict"
+    gem.homepage = "http://github.com/mlomnicki/howdy"
     gem.authors = ["mlomnicki"]
     gem.add_development_dependency "rspec"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -42,7 +42,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "rdict #{version}"
+  rdoc.title = "howdy #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
