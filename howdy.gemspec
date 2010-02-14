@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["mlomnicki"]
   s.date = %q{2010-02-14}
   s.default_executable = %q{how}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Hodwy is a tool that allowsi you querying web dictionaries from a command line.}
   s.email = %q{michal.lomnicki@gmail.com}
   s.executables = ["how"]
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/how",
+     "howdy.gemspec",
      "lib/howdy.rb",
      "lib/howdy/dictionaries/base.rb",
      "lib/howdy/dictionaries/dict_pl.rb",
