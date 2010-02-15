@@ -24,10 +24,10 @@ Howdy enables "how" binary in your system. If for example you want to know what 
 
 = Available Dictionaries
 
- * http://urbandictionary.com
- * http://dictionary.com
- * http://dict.pl
- * http://ling.pl
+* http://urbandictionary.com
+* http://dictionary.com
+* http://dict.pl
+* http://ling.pl
 
 = Documentation
 
