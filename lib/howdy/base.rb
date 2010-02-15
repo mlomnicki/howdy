@@ -31,6 +31,11 @@ module Howdy # :nodoc
       @@available_dictionaries ||= []
     end
 
+    # Returns range from 1 to total dictionaries count (1..Dictionary.available.size)
+    def self.range_available
+      (1..available.size)
+    end
+
     # Find dictionary class by label
     def self.find_by_label(label)
       available.detect { |dict| dict.dict_label == label.to_s }

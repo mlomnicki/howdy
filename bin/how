@@ -8,12 +8,30 @@ opts = OptionParser.new do |opts|
 
   opts.banner = "Usage: #{File.basename($0)} [-c|--choose [DICTIONARY]] [-l|--list] [-h|--help] WORDS"
 
-  opts.on("-c", "--choose DICTIONARY", "Interactively choose dictionary or directly pass one (-l switch to list)") do |c|
-    if dict_klass = Howdy::Dictionary.find_by_label(c)
+  opts.on("-c", "--choose", "Interactively choose a dictionary") do |c|
+    if dict_klass = Howdy::UI.choose_dictionary
       Howdy::Dictionary.set(dict_klass)
     else
       Howdy::UI.error "Dictionary: '#{c}' not found. Choose one of available dictionaries"
       exit 1
+    end
+  end
+  
+  opts.on("-d", "--dict INDEX_OR_LABEL", "Choose dictionary by index or label (-l lists available) dictionaries") do |d|
+    if d.integer?
+      index = d.to_i
+      unless Howdy::Dictionary.range_available.include?(index)
+        Howdy::UI.error "Index must be on of #{Howdy::Dictionary.range_available}"
+        exit 1
+      end
+      Howdy::Dictionary.set( Howdy::Dictionary.available[index-1] )
+    else
+      if dict_klass = Howdy::Dictionary.find_by_label(c)
+        Howdy::Dictionary.set(dict_klass)
+      else
+        Howdy::UI.error "Dictionary: '#{c}' not found. Choose one of available dictionaries"
+        exit 1
+      end
     end
   end
 
@@ -31,11 +49,12 @@ end
 opts.parse!
 
 if ARGV.empty?
-  Howdy::UI.error opts
-  exit 1
+  query = Howdy::UI.prompt("Search in #{Howdy::Dictionary.current.dict_label}")
+else
+  query = ARGV.join(' ')
 end
 
-dict = Howdy::Dictionary.current.new(ARGV.join(' '))
+dict = Howdy::Dictionary.current.new(query.strip)
 dict.parse
 dict.print
 
