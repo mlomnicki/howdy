@@ -12,20 +12,18 @@ opts = OptionParser.new do |opts|
     if dict_klass = Howdy::Dictionary.find_by_label(c)
       Howdy::Dictionary.set(dict_klass)
     else
-      $stderr.puts "Dictionary: '#{c}' not found. Choose one of available dictionaries"
+      Howdy::UI.error "Dictionary: '#{c}' not found. Choose one of available dictionaries"
       exit 1
     end
   end
 
   opts.on("-l", "--list", "List available dictionaries") do |l|
-    Howdy::Dictionary.available.each do |dict|
-      $stderr.puts "  #{dict.dict_label} - #{dict.dict_description}"
-    end
+    Howdy::UI.list_dictionaries
     exit 1
   end
 
   opts.on_tail("-h", "--help", "Show this message") do |h|
-    $stderr.puts opts
+    Howdy::UI.error opts
     exit 1
   end
 
@@ -33,7 +31,7 @@ end
 opts.parse!
 
 if ARGV.empty?
-  $stderr.puts opts
+  Howdy::UI.error opts
   exit 1
 end
 
