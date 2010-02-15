@@ -31,6 +31,11 @@ module Howdy # :nodoc
       @@available_dictionaries ||= []
     end
 
+    # Find dictionary class by label
+    def self.find_by_label(label)
+      available.detect { |dict| dict.dict_label == label.to_s }
+    end
+
     # Base class for all dictionaries. Inherit from it if you want to implement
     # your own dictionary.
     #   Example:

@@ -8,15 +8,13 @@ opts = OptionParser.new do |opts|
 
   opts.banner = "Usage: #{File.basename($0)} [-c|--choose [DICTIONARY]] [-l|--list] [-h|--help] WORDS"
 
-  opts.on("-c", "--choose DICTIONARY", "Interactively choose dictionary or pass one of: dict.pl, ling.pl") do |c|
-    dict = case c
-      when 'dict.pl': Howdy::Dictionary::DictPl
-      when 'ling.pl': Howdy::Dictionary::LingPl
-      when 'dictionary.com': Howdy::Dictionary::DictionaryCom
-      when 'urbandictionary.com': Howdy::Dictionary::UrbanDictionaryCom
-      else raise Howdy::HowdyError, 'Choose one of available dictionaries'
+  opts.on("-c", "--choose DICTIONARY", "Interactively choose dictionary or directly pass one (-l switch to list)") do |c|
+    if dict_klass = Howdy::Dictionary.find_by_label(c)
+      Howdy::Dictionary.set(dict_klass)
+    else
+      puts "Dictionary: '#{c}' not found. Choose one of available dictionaries"
+      exit 1
     end
-    Howdy::Dictionary.set(dict)
   end
 
   opts.on("-l", "--list", "List available dictionaries") do |l|
