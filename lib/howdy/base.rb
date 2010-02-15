@@ -169,10 +169,10 @@ module Howdy # :nodoc
       # Prints the contents of +result+ array. You may ovveride it in subclass.
       def print
         if result.empty?
-          puts "Nothing found"
+          UI.error "Nothing found"
         else
           result.each do |item|
-            puts item.to_s
+            UI.display item.to_s
           end
         end
       end

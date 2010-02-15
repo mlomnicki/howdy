@@ -9,11 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mlomnicki"]
-  s.date = %q{2010-02-14}
+  s.date = %q{2010-02-15}
   s.default_executable = %q{how}
   s.description = %q{Howdy is a tool that allows querying web dictionaries from a command line.}
   s.email = %q{michal.lomnicki@gmail.com}
   s.executables = ["how"]
+  s.extensions = ["ext/extconf.rb"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -24,8 +25,10 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "TODO",
      "VERSION",
      "bin/how",
+     "ext/extconf.rb",
      "howdy.gemspec",
      "lib/howdy.rb",
      "lib/howdy/base.rb",
@@ -34,6 +37,9 @@ Gem::Specification.new do |s|
      "lib/howdy/dictionaries/dictionary_com.rb",
      "lib/howdy/dictionaries/ling_pl.rb",
      "lib/howdy/dictionaries/urban_dictionary_com.rb",
+     "lib/howdy/ui.rb",
+     "lib/howdy/vendor/nuggets.rb",
+     "lib/howdy/vendor/nuggets/user_encoding_mixin.rb",
      "spec/howdy_spec.rb",
      "spec/spec_helper.rb"
   ]
