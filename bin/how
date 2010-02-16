@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'howdy')
 
 opts = OptionParser.new do |opts|
 
-  opts.banner = "Usage: #{File.basename($0)} [-c|--choose [DICTIONARY]] [-l|--list] [-h|--help] WORDS"
+  opts.banner = "Usage: #{File.basename($0)} [-c|--choose] [-d|--dict INDEX_OR_LABEL] [-l|--list] [-h|--help] WORDS"
 
   opts.on("-c", "--choose", "Interactively choose a dictionary") do |c|
     if dict_klass = Howdy::UI.choose_dictionary
