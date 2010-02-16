@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{howdy}
-  s.version = "0.1.0"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["mlomnicki"]
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
      "howdy.gemspec",
      "lib/howdy.rb",
      "lib/howdy/base.rb",
+     "lib/howdy/core_ext/ruby/string/integer.rb",
      "lib/howdy/core_ext/ruby/string/underscore.rb",
      "lib/howdy/dictionaries/dict_pl.rb",
      "lib/howdy/dictionaries/dictionary_com.rb",
