@@ -66,7 +66,7 @@ module Howdy # :nodoc
       end
 
       def initialize(user_query) # :nodoc
-        @user_query = user_query
+        @user_query = user_query.squeeze(' ').strip
       end
 
       # Sets URL to query the web dictionary.
@@ -161,7 +161,13 @@ module Howdy # :nodoc
 
       # Returns content of HTTP response wrapped in Nokogiri::HTML backend.
       def document
-        @document ||= Nokogiri::HTML(open(URI.escape(interpolated_url)), nil, self.class.doc_encoding)
+        # FIXME: deal more sophistically with exception
+        begin
+          @document ||= Nokogiri::HTML(open(URI.escape(interpolated_url)), nil, self.class.doc_encoding)
+        rescue
+          UI.error "Nothing found"
+          exit 0
+        end
       end
 
       # Array which stores the answers for the user query. Used in +parse+ method.
