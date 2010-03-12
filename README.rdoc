@@ -27,6 +27,19 @@ Howdy enables "how" binary in your system. If for example you want to know what 
     
     fantastyczny; zachwycający; niesamowity
 
+= Configuration
+
+Configuration file is created on first howdy run.
+It's available in $HOME/.howdy
+
+Currently it handles only 1 option: default_dictionary
+Examples:
+    default_dictionary = dictionary.com
+Or
+    default_dictionary = urbandictionary.com
+
+Just pass one of available dictionaries listed below.
+
 = Available Dictionaries
 
 * http://urbandictionary.com
