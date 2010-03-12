@@ -16,6 +16,7 @@ module Howdy
       
       # prints list of available dictionaries 
       def list_dictionaries
+        display "Available dictionaries:"
         Dictionary.available.each_with_index do |dict, idx|
           display " #{idx+1}. #{dict.dict_label} - #{dict.dict_description}"
         end
@@ -25,7 +26,7 @@ module Howdy
       # Returns captured data
       def prompt(message)
         print "#{message}: "
-        gets
+        $stdin.gets
       end
 
       def choose_dictionary
