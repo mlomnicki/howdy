@@ -10,6 +10,10 @@ module Howdy # :nodoc
   # Howdy::Dictionary exposes accessors of dictionaries collection.
   module Dictionary
 
+    def self.config
+      @@config ||= Config.new.parse
+    end
+
     # Returns current dictionary class
     def self.current
       @@dictionary ||= default
@@ -23,7 +27,7 @@ module Howdy # :nodoc
 
     # Returns default dictionary
     def self.default
-      DictionaryCom
+      @@default ||= (find_by_label(config[:default_dictionary]) || DictionaryCom)
     end
 
     # Returns array of available dictionaries
