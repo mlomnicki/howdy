@@ -9,7 +9,7 @@ begin
     gem.description = %Q{Howdy is a tool that allows querying web dictionaries from a command line.}
     gem.email = "michal.lomnicki@gmail.com"
     gem.homepage = "http://github.com/mlomnicki/howdy"
-    gem.authors = ["mlomnicki"]
+    gem.authors = ["Michał Łomnicki"]
     gem.add_dependency "nokogiri"
     gem.add_development_dependency "rspec"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
