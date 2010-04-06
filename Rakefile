@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rubygems'
 require 'rake'
 
@@ -48,3 +49,15 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/*/*.rb', 'lib/core/**/*.rb')
   rdoc.options << "-c UTF-8"
 end
+
+namespace :rdoc do
+  desc 'Upload documntation'
+  task :upload => :rerdoc do 
+    require 'net/scp'
+    Net::SSH.start('autonom', 'myst') do |ssh|
+      ssh.exec!('rm -rf _apps/howdy')
+    end
+    Net::SCP.upload!('autonom', 'myst', 'rdoc', '_apps/howdy', :recursive => true)
+  end
+end
+
