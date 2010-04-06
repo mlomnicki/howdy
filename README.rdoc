@@ -5,6 +5,9 @@ Dead easy command line dictionary.
 = Installation
 
     gem install howdy
+    # you'll need to install libxslt-dev and libxml-dev in your system
+    # ie. on debian/ubuntu:
+    # sudo aptitude install libxslt1-dev libxml2-dev
 
 = Description
 
