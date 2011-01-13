@@ -1,4 +1,4 @@
-$: << File.join(File.dirname(__FILE__), 'howdy')
+$:.unshift File.join(File.dirname(__FILE__), 'howdy')
 
 require 'core_ext/ruby/string/underscore'
 require 'core_ext/ruby/string/integer'
