@@ -45,6 +45,11 @@ opts = OptionParser.new do |opts|
     exit 1
   end
 
+  opts.on_tail("-v", "--version", "Show version") do |v|
+    puts "Howdy #{Howdy::VERSION}"
+    exit 0
+  end
+
 end
 opts.parse!
 
